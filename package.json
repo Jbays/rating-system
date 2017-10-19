@@ -1,0 +1,19 @@
+{
+  "name": "rating-system",
+  "version": "1.0.0",
+  "description": "Elo ratings for martial arts competition.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jbays/rating-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jbays/rating-system/issues"
+  },
+  "homepage": "https://github.com/Jbays/rating-system#readme"
+}

@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Jbays/rating-system/issues"
   },
-  "homepage": "https://github.com/Jbays/rating-system#readme"
+  "homepage": "https://github.com/Jbays/rating-system#readme",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }

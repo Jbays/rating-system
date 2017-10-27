@@ -43,10 +43,19 @@ class BasicForm extends React.Component {
         opponentLastName:opponentLastName,
         matchOutcome:matchOutcome,
       }
-    )
+    );
+
+    function postToDatabase(bundle){
+      console.log("bundle!",bundle);
+    }
+
+    postToDatabase(state);
   }
 
+
+
   render() {
+
     return (
       <div>
         <div>Input Match Information</div>

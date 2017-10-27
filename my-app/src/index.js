@@ -2,71 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
+import { Form, Text } from 'react-form';
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+ class BasicForm extends React.Component {
+    constructor( props ) {
+      super( props );
+      this.state = {};
+    }
+
+    render() {
+      return (
+        <div>
+          <Form onSubmit={submittedValues => this.setState( { submittedValues } )}>
+            { formApi => (
+              <form onSubmit={formApi.submitForm} id="form2">
+                <label htmlFor="userEmail">Email</label>
+                <Text field="userEmail" id="userEmail" />
+                <br/>
+                <label htmlFor="userFirstName">First Name</label>
+                <Text field="userFirstName" id="userFirstName" />
+                <br/>
+                <label htmlFor="userLastName">Last Name</label>
+                <Text field="userLastName" id="userLastName" />
+                <br/>
+                <label htmlFor="opponentEmail">Opponent Email</label>
+                <Text field="opponentEmail" id="opponentEmail" />
+                <br/>
+                <label htmlFor="opponentFirstName">Opponent First Name</label>
+                <Text field="opponentFirstName" id="opponentFirstName" />
+                <br/>
+                <label htmlFor="opponentLastName">Opponent Last Name</label>
+                <Text field="opponentLastName" id="opponentLastName" />
+                <br/>
+                <button type="submit" className="mb-4 btn btn-primary">Submit</button>
+              </form>
+            )}
+          </Form>
+        </div>
+      );
+    }
   }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    console.log(this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            first name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        {/* <form onSubmit={this.handleSubmit}>
-          <label>
-            last name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form> */}
-      </div>
-    );
-  }
-}
-
-// class Page extends React.Component {
-//   render() {
-//     return (
-//       <div className="">
-//         <form onSubmit={this.handeSubmit}>
-//           <label>
-//             first name:
-//             <input type="text"
-//                    value={this.state.value}
-//                    onChange={this.handleChange}/>
-//           </label>
-//           <input type="submit" name="Submit"/>
-//         </form>
-//         <form>
-//           <label>last name
-//             <input type="text" name="lastName"/>
-//           </label>
-//           <input type="submit" name="Submit"/>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
 
 ReactDOM.render(
-  <NameForm />,
+  <div>
+    {/* <NameForm /> */}
+    <BasicForm/>
+  </div>,
   document.getElementById('root')
 );

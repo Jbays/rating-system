@@ -13,7 +13,8 @@ class BasicForm extends React.Component {
       userLastName:"",
       opponentEmail:"",
       opponentFirstName:"",
-      opponentLastName:""
+      opponentLastName:"",
+      matchOutcome:"",
     };
 
     this.setStateOnSubmit = this.setStateOnSubmit.bind(this);
@@ -29,6 +30,7 @@ class BasicForm extends React.Component {
     let opponentEmail = state.opponentEmail ? state.opponentEmail : '';
     let opponentFirstName = state.opponentFirstName ? state.opponentFirstName : '';
     let opponentLastName = state.opponentLastName ? state.opponentLastName : '';
+    let matchOutcome = state.matchOutcome ? state.matchOutcome : '';
 
     //NOTE: WHY DOESN'T THIS WORK? --> this.setState({state:state})
     this.setState(
@@ -39,6 +41,7 @@ class BasicForm extends React.Component {
         opponentEmail:opponentEmail,
         opponentFirstName:opponentFirstName,
         opponentLastName:opponentLastName,
+        matchOutcome:matchOutcome,
       }
     )
   }
@@ -46,6 +49,8 @@ class BasicForm extends React.Component {
   render() {
     return (
       <div>
+        <div>Input Match Information</div>
+        <br/>
         <Form onSubmit={submittedValues => this.setStateOnSubmit(submittedValues)}>
           { formApi => (
             <form onSubmit={formApi.submitForm} id="form2">
@@ -72,6 +77,10 @@ class BasicForm extends React.Component {
               <label htmlFor="opponentLastName">Opponent Last Name</label>
               <br/>
               <Text field="opponentLastName" id="opponentLastName" />
+              <br/>
+              <label htmlFor="matchOutcome">Match Outcome</label>
+              <br/>
+              <Text field="matchOutcome" id="matchOutcome" />
               <br/>
               <button type="submit" className="mb-4 btn btn-primary">Submit</button>
             </form>
